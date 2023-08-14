@@ -1,0 +1,128 @@
+.list {
+  display: grid;
+  margin: 0;
+  /* https://css-tricks.com/responsive-layouts-fewer-media-queries/ */
+  --w: 280px;
+  --n: 2;
+  gap: var(--size-gap);
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(max(var(--w), 100%/ (var(--n) + 1) + 0.1%), 1fr)
+  );
+  margin-bottom: var(--size-gap);
+  margin-top: var(--size-gap);
+}
+
+.listItem {
+  margin: 0;
+}
+
+.listItem::marker {
+  color: #e95800;
+}
+
+.listItem:nth-child(2)::marker {
+  color: #159bf3;
+}
+
+.listItem:nth-child(3)::marker {
+  color: #8eb814;
+}
+
+.listItem:nth-child(4)::marker {
+  color: #663399;
+}
+
+.listItemLink {
+  color: var(--color-primary);
+  font-weight: bold;
+}
+
+.listItemDescription {
+  color: var(--color-text);
+  margin-bottom: 0;
+  margin-top: var(--space-1);
+}
+
+.textCenter {
+  text-align: center;
+}
+
+.intro {
+  max-width: none;
+  line-height: var(--line-height-loose);
+}
+
+.intro1 {
+    font-size: 3.25rem;
+  color: #ef4444;
+  text-align: center;
+  padding: 200px;
+}
+
+@keyframes linkEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.link {
+  color: #3498db;
+  text-decoration: none;
+  border: 2px solid transparent;
+  padding: 10px 20px;
+  transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+  animation: linkEntrance 0.5s ease-in-out forwards; /* Apply entrance animation */
+}
+.link:hover {
+  color: #e74c3c;
+  border-color: #e74c3c;
+  transform: scale(1.05) translateY(-3px); /* Add a subtle upward movement */
+}
+
+.main{
+  /* background-image: url(../images/bg.png); */
+  background-size: cover;
+  min-height: 100vh;
+  min-width: 100vw;
+  background-repeat: no-repeat;
+  background-position: center ;
+  /* margin-right: -100px; */
+}
+
+.lorem {
+  font-size: 1.25rem;
+  padding-left: 25px;
+  color: #333; /* Change to your desired text color */
+  font-family: "Helvetica Neue", Arial, sans-serif; /* Change to your desired font */
+  font-weight: 500;
+}
+
+.loremlow {
+  font-size: 1.05rem;
+  padding-left: 25px;
+  color: #777; /* Change to your desired text color */
+  font-family: "Helvetica Neue", Arial, sans-serif; /* Change to your desired font */
+  font-weight: 400;
+}
+
+.flex { 
+  display: flex; 
+  gap: 120px;
+}
+
+.img1 {
+    background-image: url(../images/bg.png);
+}
+
+
+
+
+
+
+
